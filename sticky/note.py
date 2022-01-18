@@ -27,6 +27,14 @@ class new_note():
 
         self.close_button = self.builder.get_object("ExitButton")
 
+        self.picker_button = self.builder.get_object("PickerButton")
+
+        self.header_bar = self.builder.get_object("Header")
+
+        self.color_menu = self.builder.get_object("ColorMenu")
+
+        self.color = "banana"
+
         self.banana_button = self.builder.get_object("BananaButton")
         self.strawberry_button = self.builder.get_object("StrawberryButton")
         self.lime_button = self.builder.get_object("LimeButton")

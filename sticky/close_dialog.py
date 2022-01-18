@@ -20,6 +20,8 @@ class new_close_dialog():
         self.close_window.set_skip_taskbar_hint(True)
         self.close_window.set_decorated(True)
 
+        self.info_label = self.builder.get_object("CloseMessage")
+
         self.cancel_button = self.builder.get_object("CancelButton")
 
         self.close_button = self.builder.get_object("CloseButton")

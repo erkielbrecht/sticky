@@ -30,7 +30,10 @@ class note_handler():
         new_note = note.new_note()
         new_note.add_button.connect("clicked", self.make_new_note)
         new_note.close_button.connect("clicked", self.close_note, self.counter)
+
         new_note.note_window.present()
+
+        note_color.set_note_color(None, new_note.color, new_note)
 
         new_note.banana_button.connect("clicked", note_color.set_note_color, "banana", new_note)
         new_note.strawberry_button.connect("clicked", note_color.set_note_color, "strawberry", new_note)
@@ -65,6 +68,8 @@ class note_handler():
             destroy_note(None)
         else:
             _close_dialog = close_dialog.new_close_dialog()
+
+            note_color.set_dialog_color(self.note_list[parent].color, _close_dialog)
 
             _close_dialog.close_window.set_transient_for(c_note_window)
 
