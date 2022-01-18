@@ -8,7 +8,7 @@
             "name": "Main app debug",
             "type": "python",
             "request": "launch",
-            "program": "com.github.erkielbrecht.sitcky",
+            "program": "com.github.erkielbrecht.sticky",
             "console": "integratedTerminal"
         }
     ]
