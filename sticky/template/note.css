@@ -1,37 +1,85 @@
-window {
-    background-color: #fff394;
-    border-radius: 5px 5px 5px 5px;
-    border-width: 1px;
-    border-style: solid;
+/* Banana class definitions */
+
+.banana-border {
     border-color: #d48e15;
 }
 
-textview {
+.banana-header-border {
+    border-top-color: #d48e15;
+    border-left-color: #d48e15;
+    border-right-color: #d48e15;
+}
+
+.banana-background {
     background-color: #fff394;
+}
+
+.banana-font {
     color: #ad5f00;
-    font-family: Inter,Helvetica,Roboto,sans-serif;
-    font-weight: 400;
     caret-color: #ad5f00;
 }
 
-label {
-    background-color: #fff394;
-    color: #ad5f00;
-    font-family: Inter,Helvetica,Roboto,sans-serif;
-    font-weight: 400;
-    caret-color: #ad5f00;
+/* Strawberry class definitions */
+
+.strawberry-border {
+    border-color: #a10705;
 }
 
-scrolledwindow {
-    border: none;
+.strawberry-header-border {
+    border-top-color: #a10705;
+    border-left-color: #a10705;
+    border-right-color: #a10705;
 }
 
-button {
-    background: transparent;
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
-    color: #d48e15;
+.strawberry-background {
+    background-color: #ff8c82;
+}
+
+.strawberry-font {
+    color: #7a0000;
+    caret-color: #7a0000;
+}
+
+/* Lime class definitions */
+
+.lime-border {
+    border-color: #3a9104;
+}
+
+.lime-header-border {
+    border-top-color: #3a9104;
+    border-left-color: #3a9104;
+    border-right-color: #3a9104;
+}
+
+.lime-background {
+    background-color: #d1ff82;
+}
+
+.lime-font {
+    color: #206b00;
+    caret-color: #206b00;
+}
+
+/* Blueberry class definitions */
+
+.blueberry-border {
+    border-color: #0d52bf;
+}
+
+.blueberry-header-border {
+    border-top-color: #0d52bf;
+    border-left-color: #0d52bf;
+    border-right-color: #0d52bf;
+}
+
+.blueberry-background {
+    background-color: #8cd5ff;
+}
+
+.blueberry-font {
+    color: #002e99;
+    caret-color: #002e99;
 }
 
 decoration {
@@ -41,22 +89,48 @@ decoration {
     box-shadow: none;
 }
 
+window {
+    border-radius: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+}
 
 headerbar {
-    background-color: #fff394;
-    border-radius: 0px 0px 0px 0px;
     box-shadow: none;
     border-radius: 5px 5px 0px 0px;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: #d48e15;
-
-    border-left-width: 1px;
-    border-left-style: solid;
-    border-left-color: #d48e15;
 
     border-right-width: 1px;
     border-right-style: solid;
-    border-right-color: #d48e15;
 
+    border-left-width: 1px;
+    border-left-style: solid;
+
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+popover {
+    border-width: 1px;
+    border-style: solid;
+}
+
+scrolledwindow {
+    border: none;
+}
+
+textview {
+    font-family: Inter,Helvetica,Roboto,sans-serif;
+    font-weight: 400;
+}
+
+label {
+    font-family: Inter,Helvetica,Roboto,sans-serif;
+    font-weight: 400;
+}
+
+button {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }

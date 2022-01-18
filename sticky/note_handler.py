@@ -11,6 +11,7 @@ from collections import OrderedDict
 
 import note
 import close_dialog
+import note_color
 
 print("Note handler imported!")
 
@@ -30,6 +31,11 @@ class note_handler():
         new_note.add_button.connect("clicked", self.make_new_note)
         new_note.close_button.connect("clicked", self.close_note, self.counter)
         new_note.note_window.present()
+
+        new_note.banana_button.connect("clicked", note_color.set_note_color, "banana", new_note)
+        new_note.strawberry_button.connect("clicked", note_color.set_note_color, "strawberry", new_note)
+        new_note.lime_button.connect("clicked", note_color.set_note_color, "lime", new_note)
+        new_note.blueberry_button.connect("clicked", note_color.set_note_color, "blueberry", new_note)
 
         self.note_list[self.counter] = new_note
 
