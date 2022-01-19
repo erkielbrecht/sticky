@@ -131,7 +131,9 @@ decoration {
     border-style: none;
     border-width: 0px;
     box-shadow: none;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.25), 0 3px 3px -3px rgba(0,0,0,0.45);
 }
+
 
 window {
     border-radius: 5px 5px 5px 5px;

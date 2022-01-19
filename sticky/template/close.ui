@@ -25,7 +25,7 @@
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
             <property name="label" translatable="yes">Do you wish to close the sticky?
-(It contains unsaved text.)</property>
+It will not be saved.</property>
             <property name="justify">center</property>
           </object>
           <packing>

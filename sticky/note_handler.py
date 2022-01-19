@@ -2,6 +2,8 @@
 
 import gi
 
+import os
+
 import json
 
 gi.require_version("Gtk", "3.0")
@@ -182,9 +184,13 @@ class note_handler():
 
 
     def __init__(self):
-        note_save_file = open("saved_notes", "r")
-        content =  note_save_file.read()
-        note_save_file.close()
+        if os.path.exists("saved_notes"):
+            note_save_file = open("saved_notes", "r")
+            content =  note_save_file.read()
+            note_save_file.close()
+        else:
+            content = ""
+
 
         print(content)
 
