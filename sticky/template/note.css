@@ -19,6 +19,17 @@
     caret-color: #ad5f00;
 }
 
+.banana-font:focus {
+    border: none;
+    outline: none;
+}
+
+.banana-font:active:hover {
+    background-color: #ffe16b;
+    border: none;
+    outline: none;
+}
+
 /* Strawberry class definitions */
 
 .strawberry-border {
@@ -38,6 +49,17 @@
 .strawberry-font {
     color: #7a0000;
     caret-color: #7a0000;
+}
+
+.strawberry-font:focus {
+    border: none;
+    outline: none;
+}
+
+.strawberry-font:active:hover {
+    background-color: #ed5353;
+    border: none;
+    outline: none;
 }
 
 /* Lime class definitions */
@@ -61,6 +83,17 @@
     caret-color: #206b00;
 }
 
+.lime-font:focus {
+    border: none;
+    outline: none;
+}
+
+.lime-font:active:hover {
+    background-color: #9bdb4d;
+    border: none;
+    outline: none;
+}
+
 /* Blueberry class definitions */
 
 .blueberry-border {
@@ -80,6 +113,17 @@
 .blueberry-font {
     color: #002e99;
     caret-color: #002e99;
+}
+
+.blueberry-font:focus {
+    border: none;
+    outline: none;
+}
+
+.blueberry-font:active:hover {
+    background-color: #64baff;
+    border: none;
+    outline: none;
 }
 
 decoration {
@@ -121,6 +165,7 @@ scrolledwindow {
 textview {
     font-family: Inter,Helvetica,Roboto,sans-serif;
     font-weight: 400;
+    font-size: 15px;
 }
 
 label {

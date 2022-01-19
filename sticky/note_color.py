@@ -33,11 +33,18 @@ def set_note_color(widget, color, note):
 
     note.color = color
 
+
     window_context = note.note_window.get_style_context()
 
     add_button_context = note.add_button.get_style_context()
     close_button_context = note.close_button.get_style_context()
     picker_button_context = note.picker_button.get_style_context()
+
+    bold_button_context = note.bold_button.get_style_context()
+    underline_button_context = note.underline_button.get_style_context()
+    italic_button_context = note.italic_button.get_style_context()
+
+    settings_button_context = note.settings_button.get_style_context()
 
     textview_context = note.note_text.get_style_context()
 
@@ -105,6 +112,31 @@ def set_note_color(widget, color, note):
 
     picker_button_context.add_class(font)
 
+    for x in bold_button_context.list_classes():
+        if x in css_classes:
+           bold_button_context.remove_class(x)
+
+    bold_button_context.add_class(font)
+
+    for x in italic_button_context.list_classes():
+        if x in css_classes:
+           italic_button_context.remove_class(x)
+
+    italic_button_context.add_class(font)
+
+    for x in underline_button_context.list_classes():
+        if x in css_classes:
+           underline_button_context.remove_class(x)
+
+    underline_button_context.add_class(font)
+
+    for x in settings_button_context.list_classes():
+        if x in css_classes:
+           settings_button_context.remove_class(x)
+
+    settings_button_context.add_class(font)
+    print(settings_button_context.list_classes())
+
     for x in textview_context.list_classes():
         if x in css_classes:
            textview_context.remove_class(x)
@@ -124,7 +156,7 @@ def set_note_color(widget, color, note):
            popover_context.remove_class(x)
 
     popover_context.add_class(background)
-    popover_context.add_class(font)
+    popover_context.add_class(border)
 
 def set_dialog_color(color, dialog):
 

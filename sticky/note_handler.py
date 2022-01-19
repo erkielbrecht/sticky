@@ -2,6 +2,8 @@
 
 import gi
 
+import json
+
 gi.require_version("Gtk", "3.0")
 gi.require_version('Gdk', '3.0')
 gi.require_version('Handy', "1")
@@ -19,7 +21,12 @@ class note_handler():
     note_list = OrderedDict()
     counter = 0
 
+    def quit_app(self, *args):
+        self.save_notes(None)
+        Gtk.main_quit()
+
     def note_check(self):
+        self.save_notes(None)
         if len(self.note_list) == 0:
             Gtk.main_quit()
 
@@ -28,10 +35,20 @@ class note_handler():
         self.counter += 1
 
         new_note = note.new_note()
+
         new_note.add_button.connect("clicked", self.make_new_note)
         new_note.close_button.connect("clicked", self.close_note, self.counter)
 
+        new_note.bold_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_bold)
+        new_note.underline_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_underline)
+        new_note.italic_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_italic)
+
         new_note.note_window.present()
+
+        new_note.note_accelerators.connect(new_note.key, new_note.mod, 0, self.quit_app)
+
+        new_note.note_window.connect("focus-in-event", self.handle_focus, True, new_note)
+        new_note.note_window.connect("focus-out-event", self.handle_focus, False, new_note)
 
         note_color.set_note_color(None, new_note.color, new_note)
 
@@ -42,6 +59,89 @@ class note_handler():
 
         self.note_list[self.counter] = new_note
 
+    def handle_focus(self, widget, other, in_focus, _note):
+        if in_focus:
+            _note.bold_button.show()
+            _note.underline_button.show()
+            _note.italic_button.show()
+            _note.settings_button.show()
+        else:
+            self.save_notes(None)
+            _note.bold_button.hide()
+            _note.underline_button.hide()
+            _note.italic_button.hide()
+            _note.settings_button.hide()
+
+
+    def set_text_tag(self, widget, _note, tag):
+        bounds = _note.text_buffer.get_selection_bounds()
+        if len(bounds) != 0:
+            start, end = bounds
+            if start.has_tag(tag) and end.has_tag(tag) or end.ends_tag(tag):
+                _note.text_buffer.remove_tag(tag, start, end)
+            else:
+                _note.text_buffer.apply_tag(tag, start, end)
+
+    def save_notes(self, widget):
+        note_save = {}
+        for i in self.note_list:
+            _note = self.note_list[i]
+
+            note_info = {}
+
+            note_info["color"] =(_note.color)
+
+            note_info["size"] = (_note.note_window.get_size())
+
+            note_info["position"] = (_note.note_window.get_position())
+
+            note_buffer =  _note.note_text.get_buffer()
+
+            start_iter = note_buffer.get_start_iter()
+            end_iter = note_buffer.get_end_iter()
+
+            format = note_buffer.register_serialize_tagset()
+            save = note_buffer.serialize(note_buffer, format, start_iter, end_iter)
+            note_info["content"] = save.decode("latin1")
+
+            note_save[i] = note_info
+
+        save_string = json.dumps(note_save)
+        save_file = open("saved_notes","w")
+        save_file.write(save_string)
+        save_file.close()
+        print("Saving Done!")
+        
+
+    def load_notes(self):
+        save_file = open("saved_notes","r")
+        save_string = save_file.read()
+
+        notes = json.loads(save_string)
+
+        for i in notes:
+            self.make_new_note(None)
+            new_note = self.note_list[self.counter]
+            new_note.color = notes[i]["color"]
+            note_color.set_note_color(None, new_note.color, new_note)
+            new_note.note_window.resize(notes[i]["size"][0], notes[i]["size"][1])
+            new_note.note_window.move(notes[i]["position"][0], notes[i]["position"][1])
+
+            note_buffer = new_note.note_text.get_buffer()
+
+            start_iter = note_buffer.get_start_iter()
+
+            format = note_buffer.register_deserialize_tagset()
+            print(notes[i]["content"].encode("latin1"))
+            note_buffer.deserialize(note_buffer, format, start_iter, notes[i]["content"].encode("latin1"))
+
+
+
+
+
+        save_file.close()
+
+
     def close_note(self, widget, parent):
 
         c_note_window = self.note_list[parent].note_window
@@ -50,6 +150,7 @@ class note_handler():
 
         start_iter = note_buffer.get_start_iter()
         end_iter = note_buffer.get_end_iter()
+ 
         text = note_buffer.get_text(start_iter, end_iter, True) 
 
         def destroy_dialog(widget):
@@ -81,4 +182,13 @@ class note_handler():
 
 
     def __init__(self):
-        self.make_new_note(None)
+        note_save_file = open("saved_notes", "r")
+        content =  note_save_file.read()
+        note_save_file.close()
+
+        print(content)
+
+        if content == "{}" or content == "":
+            self.make_new_note(None)
+        else:
+            self.load_notes()
