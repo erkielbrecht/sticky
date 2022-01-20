@@ -19,6 +19,21 @@
     caret-color: #ad5f00;
 }
 
+.banana-font selection:focus {
+    color: #ffe16b;
+    background: #d48e15;
+}
+
+.banana-font selection{
+    color: #ffe16b;
+    background: #d48e15;
+}
+
+.banana-font selection:backdrop {
+    color: #ad5f00;
+    background: none;
+}
+
 .banana-font:focus {
     border: none;
     outline: none;
@@ -49,6 +64,21 @@
 .strawberry-font {
     color: #7a0000;
     caret-color: #7a0000;
+}
+
+.strawberry-font selection:focus {
+    color: #ed5353;
+    background: #a10705;
+}
+
+.strawberry-font selection {
+    color: #ed5353;
+    background: #a10705;
+}
+
+.strawberry-font selection:backdrop {
+    color: #7a0000;
+    background: none;
 }
 
 .strawberry-font:focus {
@@ -88,6 +118,21 @@
     outline: none;
 }
 
+.lime-font selection:focus {
+    color: #9bdb4d;
+    background: #3a9104;
+}
+
+.lime-font selection{
+    color: #9bdb4d;
+    background: #3a9104;
+}
+
+.lime-font selection:backdrop {
+    color: #206b00;
+    background: none;
+}
+
 .lime-font:active:hover {
     background-color: #9bdb4d;
     border: none;
@@ -118,6 +163,21 @@
 .blueberry-font:focus {
     border: none;
     outline: none;
+}
+
+.blueberry-font selection:focus {
+    color: #64baff;
+    background: #0d52bf;
+}
+
+.blueberry-font selection {
+    color: #64baff;
+    background: #0d52bf;
+}
+
+.blueberry-font selection:backdrop {
+    color: #002e99;
+    background: none;
 }
 
 .blueberry-font:active:hover {
@@ -173,6 +233,7 @@ textview {
 label {
     font-family: Inter,Helvetica,Roboto,sans-serif;
     font-weight: 400;
+    font-size: 15px;
 }
 
 button {
@@ -180,4 +241,5 @@ button {
     background-color: transparent;
     box-shadow: none;
     border: none;
+    font-size: 15px;
 }

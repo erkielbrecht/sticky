@@ -20,10 +20,10 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="BananaCircle">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">../icons/banana_cricle.svg</property>
+                <property name="icon_name">image-missing</property>
               </object>
             </child>
           </object>
@@ -39,10 +39,10 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="BerryCircle">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">../icons/strawberry_circle.svg</property>
+                <property name="icon_name">image-missing</property>
               </object>
             </child>
           </object>
@@ -58,10 +58,10 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="LimeCircle">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">../icons/lime_circle.svg</property>
+                <property name="icon_name">image-missing</property>
               </object>
             </child>
           </object>
@@ -77,10 +77,11 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="BlueCircle">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">../icons/blueberry_circle.svg</property>
+                <property name="icon_name">image-missing</property>
+                <property name="icon_size">1</property>
               </object>
             </child>
           </object>
@@ -94,7 +95,7 @@
     </child>
   </object>
   <object class="HdyWindow" id="Note">
-    <property name="can_focus">False</property>
+    <property name="can_focus">True</property>
     <property name="default_width">300</property>
     <property name="default_height">300</property>
     <child>
@@ -104,12 +105,13 @@
         <child>
           <object class="HdyHeaderBar" id="Header">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can_focus">True</property>
+            <property name="has_focus">True</property>
             <property name="spacing">0</property>
             <child type="title">
               <object class="GtkBox" id="ButtonBox">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
                 <property name="hexpand">True</property>
                 <property name="homogeneous">True</property>
                 <child>

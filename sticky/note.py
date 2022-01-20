@@ -53,3 +53,15 @@ class new_note():
         self.strawberry_button = self.builder.get_object("StrawberryButton")
         self.lime_button = self.builder.get_object("LimeButton")
         self.blueberry_button = self.builder.get_object("BlueberryButton")
+
+        self.banana_image = self.builder.get_object("BananaCircle")
+        self.banana_image.set_from_file("sticky/icons/banana_circle.svg")
+
+        self.blueberry_image = self.builder.get_object("BlueCircle")
+        self.blueberry_image.set_from_file("sticky/icons/blueberry_circle.svg")
+
+        self.strawberry_image = self.builder.get_object("BerryCircle")
+        self.strawberry_image.set_from_file("sticky/icons/strawberry_circle.svg")
+
+        self.lime_image = self.builder.get_object("LimeCircle")
+        self.lime_image.set_from_file("sticky/icons/lime_circle.svg")
