@@ -15,6 +15,7 @@ from collections import OrderedDict
 
 import note
 import close_dialog
+import settings_dialog
 import note_color
 
 print("Note handler imported!")
@@ -44,6 +45,8 @@ class note_handler():
         new_note.bold_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_bold)
         new_note.underline_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_underline)
         new_note.italic_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_italic)
+
+        new_note.settings_button.connect("clicked", self.open_settings)
 
         new_note.note_window.present()
 
@@ -143,6 +146,10 @@ class note_handler():
 
         save_file.close()
 
+    def open_settings(self, *args):
+        _settings_dialog = settings_dialog.new_settings_dialog()
+
+        _settings_dialog.settings_window.present()
 
     def close_note(self, widget, parent):
 

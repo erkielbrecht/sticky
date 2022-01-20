@@ -208,16 +208,20 @@ def set_dialog_color(color, dialog):
         if x in css_classes:
            close_button_context.remove_class(x)
 
+    close_button_context.add_class("smaller-font")
     close_button_context.add_class(font)
 
     for x in cancel_button_context.list_classes():
         if x in css_classes:
            cancel_button_context.remove_class(x)
 
+    cancel_button_context.add_class("smaller-font")
     cancel_button_context.add_class(font)
 
     for x in label_context.list_classes():
         if x in css_classes:
            label_context.remove_class(x)
 
+    label_context.add_class("smaller-font")
     label_context.add_class(font)
+

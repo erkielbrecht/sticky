@@ -199,11 +199,17 @@ window {
     border-radius: 5px 5px 5px 5px;
     border-width: 1px;
     border-style: solid;
+    border-color: #d48e15;
+    background-color: #fff394;
 }
 
 headerbar {
     box-shadow: none;
     border-radius: 5px 5px 0px 0px;
+
+    border-top-color: #d48e15;
+    border-left-color: #d48e15;
+    border-right-color: #d48e15;
 
     border-right-width: 1px;
     border-right-style: solid;
@@ -213,6 +219,7 @@ headerbar {
 
     border-top-width: 1px;
     border-top-style: solid;
+    background-color: #fff394;
 }
 
 popover {
@@ -233,7 +240,7 @@ textview {
 label {
     font-family: Inter,Helvetica,Roboto,sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 15;
 }
 
 button {
@@ -241,5 +248,44 @@ button {
     background-color: transparent;
     box-shadow: none;
     border: none;
-    font-size: 15px;
+    font-size: 15;
+}
+
+.settings-label {
+    font-size: 12;
+    color: #ad5f00;
+    caret-color: #ad5f00;
+}
+
+.smaller-font {
+    font-size: 12;
+}
+
+button:focus {
+    border: none;
+}
+
+switch {
+    background-color: #ffe16b;
+    border-color: #ffe16b;
+    box-shadow: none;
+}
+
+switch slider {
+    background-color: #ad5f00;
+    border: none;
+    box-shadow: none;
+}
+
+switch:checked{
+    background-color: #d48e15;
+    border-color: #d48e15;
+}
+
+button:hover {
+    border: none;
+}
+
+button:active:hover {
+    border: none;
 }
