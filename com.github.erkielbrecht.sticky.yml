@@ -1,0 +1,22 @@
+app-id: com.github.erkielbrecht.sticky
+
+runtime: io.elementary.Platform
+runtime-version: '6'
+sdk: io.elementary.Sdk
+
+command: com.github.erkielbrecht.sticky
+
+finish-args:
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+  - '--system-talk-name=org.freedesktop.Accounts'
+
+modules:
+  - name: sticky
+    buildsystem: simple
+    build-commands:
+     - python3 setup.py install --prefix=/app
+    sources:
+      - type: dir
+        path: .
