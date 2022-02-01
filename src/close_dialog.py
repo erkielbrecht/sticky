@@ -14,7 +14,7 @@ class new_close_dialog():
 
     def __init__(self):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file("sticky/template/close.ui")
+        self.builder.add_from_file("data/template/close.ui")
 
         self.close_window = self.builder.get_object("CloseWindow")
         self.close_window.set_skip_taskbar_hint(True)

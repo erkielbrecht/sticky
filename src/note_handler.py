@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from textwrap import indent
 import gi
 
 import os
@@ -111,15 +112,15 @@ class note_handler():
 
             note_save[i] = note_info
 
-        save_string = json.dumps(note_save)
-        save_file = open("saved_notes","w")
+        save_string = json.dumps(note_save, indent=4)
+        save_file = open("data/saved_notes.json","w")
         save_file.write(save_string)
         save_file.close()
         print("Saving Done!")
         
 
     def load_notes(self):
-        save_file = open("saved_notes","r")
+        save_file = open("data/saved_notes.json","r")
         save_string = save_file.read()
 
         notes = json.loads(save_string)
@@ -139,10 +140,6 @@ class note_handler():
             format = note_buffer.register_deserialize_tagset()
             print(notes[i]["content"].encode("latin1"))
             note_buffer.deserialize(note_buffer, format, start_iter, notes[i]["content"].encode("latin1"))
-
-
-
-
 
         save_file.close()
 
@@ -191,8 +188,8 @@ class note_handler():
 
 
     def __init__(self):
-        if os.path.exists("saved_notes"):
-            note_save_file = open("saved_notes", "r")
+        if os.path.exists("data/saved_notes.json"):
+            note_save_file = open("data/saved_notes.json", "r")
             content =  note_save_file.read()
             note_save_file.close()
         else:

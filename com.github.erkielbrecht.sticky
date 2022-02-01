@@ -21,14 +21,14 @@ launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 # Update sys.path to include modules
 if launch_dir == "/usr/bin":
-    modules_path = "/usr/share/com.github.erkielbrecht.sticky/sticky"
+    modules_path = "/usr/share/com.github.erkielbrecht.sticky/src"
 else:
-    modules_path = launch_dir + "/sticky"
+    modules_path = launch_dir + "/src"
 
 sys.path.insert(0, modules_path)
 
 try:
-    from sticky import main
+    from src import main
 except ImportError:
     print("Failed to import module main.py!")
     print("Installation was assumed to be at:", modules_path)

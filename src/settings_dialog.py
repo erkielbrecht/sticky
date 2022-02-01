@@ -14,7 +14,7 @@ class new_settings_dialog():
 
     def __init__(self):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file("sticky/template/settings.ui")
+        self.builder.add_from_file("data/template/settings.ui")
 
         self.settings_window = self.builder.get_object("SettingsWindow")
 
