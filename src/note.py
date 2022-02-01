@@ -22,7 +22,7 @@ class new_note():
 
     def __init__(self):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file(data_path + "data/template/note.ui")
+        self.builder.add_from_file(data_path + "/data/template/note.ui")
 
         self.note_window = self.builder.get_object("Note")
         self.note_window.set_skip_taskbar_hint(True)
@@ -63,13 +63,13 @@ class new_note():
         self.blueberry_button = self.builder.get_object("BlueberryButton")
 
         self.banana_image = self.builder.get_object("BananaCircle")
-        self.banana_image.set_from_file(data_path + "data/icons/banana_circle.svg")
+        self.banana_image.set_from_file(data_path + "/data/icons/banana_circle.svg")
 
         self.blueberry_image = self.builder.get_object("BlueCircle")
-        self.blueberry_image.set_from_file(data_path + "data/icons/blueberry_circle.svg")
+        self.blueberry_image.set_from_file(data_path + "/data/icons/blueberry_circle.svg")
 
         self.strawberry_image = self.builder.get_object("BerryCircle")
-        self.strawberry_image.set_from_file(data_path + "data/icons/strawberry_circle.svg")
+        self.strawberry_image.set_from_file(data_path + "/data/icons/strawberry_circle.svg")
 
         self.lime_image = self.builder.get_object("LimeCircle")
-        self.lime_image.set_from_file(data_path + "data/icons/lime_circle.svg")
+        self.lime_image.set_from_file(data_path + "/data/icons/lime_circle.svg")

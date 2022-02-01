@@ -38,7 +38,7 @@ class Application(Gtk.Application):
 def start():
     screen = Gdk.Screen.get_default()
     provider = Gtk.CssProvider()
-    provider.load_from_path(data_path + "data/note.css")
+    provider.load_from_path(data_path + "/data/note.css")
     Gtk.StyleContext.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
     app = Application()
