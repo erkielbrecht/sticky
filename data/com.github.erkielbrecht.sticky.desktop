@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Sticky
+GenericName=Sticky
+Comment=Simple sticky notes for your desktop
+Categories=System;Utility;
+Exec=com.github.erkielbrecht.sticky
+Icon=com.github.erkielbrecht.sticky
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=com.github.erkielbrecht.sticky
+Keywords=Utility;
