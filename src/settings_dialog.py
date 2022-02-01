@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import gi
+import gi, os, sys
 
 gi.require_version("Gtk", "3.0")
 gi.require_version('Gdk', '3.0')
@@ -8,13 +8,21 @@ gi.require_version('Handy', "1")
 
 from gi.repository import Gtk, Gdk, Handy
 
+launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+# Update sys.path to include modules
+if launch_dir == "/usr/bin":
+    data_path = "/usr/share/com.github.erkielbrecht.sticky/sticky"
+else:
+    data_path = launch_dir + "/sticky"
+
 print("Settings Dialog class imported!")
 
 class new_settings_dialog():
 
     def __init__(self):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file("data/template/settings.ui")
+        self.builder.add_from_file(data_path + "data/template/settings.ui")
 
         self.settings_window = self.builder.get_object("SettingsWindow")
 
