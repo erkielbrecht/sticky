@@ -49,6 +49,8 @@ class note_handler():
 
         new_note = note.new_note()
 
+        new_note.note_window.connect("delete-event", self.close_note)
+        
         new_note.add_button.connect("clicked", self.make_new_note)
         new_note.close_button.connect("clicked", self.close_note, self.counter)
 
