@@ -6,8 +6,9 @@ import os, sys
 gi.require_version("Gtk", "3.0")
 gi.require_version('Gdk', '3.0')
 gi.require_version('Handy', "1")
+gi.require_version('Granite', "1.0")
 
-from gi.repository import Gtk, Gdk, Handy
+from gi.repository import Gtk, Gdk, Handy, Granite
 
 from note_handler import note_handler
 
@@ -22,6 +23,15 @@ else:
 class Application(Gtk.Application):
 
     def do_activate(self):
+
+        self.granite_settings = Granite.Settings()
+        self.gtk_settings = Gtk.Settings.get_default()
+
+        if self.granite_settings.get_prefers_color_scheme() == Granite.SettingsColorScheme.DARK:
+            self.gtk_settings.set_property("gtk-application-prefer-dark-theme", True) 
+
+        self.granite_settings.connect("notify::prefers-color-scheme", self.color_scheme_changed)
+
         print("App started!")
 
         Handy.init()
@@ -33,6 +43,12 @@ class Application(Gtk.Application):
         print("Note handler decleared!")
 
         Gtk.main()
+
+    def color_scheme_changed(self, *args):
+        if self.granite_settings.get_prefers_color_scheme() == Granite.SettingsColorScheme.DARK:
+            self.gtk_settings.set_property("gtk-application-prefer-dark-theme", True)
+        else:
+            self.gtk_settings.set_property("gtk-application-prefer-dark-theme", False)
     
     
 def start():

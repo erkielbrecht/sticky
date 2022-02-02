@@ -45,6 +45,10 @@
     outline: none;
 }
 
+.banana-font:checked {
+    background-color: #ffe16b;
+}
+
 /* Strawberry class definitions */
 
 .strawberry-border {
@@ -90,6 +94,10 @@
     background-color: #ed5353;
     border: none;
     outline: none;
+}
+
+.strawberry-font:checked {
+    background-color: #ed5353;
 }
 
 /* Lime class definitions */
@@ -139,6 +147,10 @@
     outline: none;
 }
 
+.lime-font:checked {
+    background-color: #9bdb4d;
+}
+
 /* Blueberry class definitions */
 
 .blueberry-border {
@@ -186,7 +198,11 @@
     outline: none;
 }
 
-decoration {
+.blueberry-font:checked {
+    background-color: #64baff;
+}
+
+window.default decoration {
     border-radius: 5px;
     border-style: none;
     border-width: 0px;
@@ -195,22 +211,27 @@ decoration {
 }
 
 
-window {
-    border-radius: 5px 5px 5px 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #d48e15;
-    background-color: #fff394;
+window.default {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
 }
 
-headerbar {
+.default headerbar {
     background-image: none;
     box-shadow: none;
     border-radius: 5px 5px 0px 0px;
-
-    border-top-color: #d48e15;
-    border-left-color: #d48e15;
-    border-right-color: #d48e15;
 
     border-right-width: 1px;
     border-right-style: solid;
@@ -220,31 +241,30 @@ headerbar {
 
     border-top-width: 1px;
     border-top-style: solid;
-    background-color: #fff394;
 }
 
-popover {
+.default popover {
     border-width: 1px;
     border-style: solid;
 }
 
-scrolledwindow {
+.default scrolledwindow {
     border: none;
 }
 
-textview {
+.default textview {
     font-family: Inter,Helvetica,Roboto,sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
 
-label {
+.default label {
     font-family: Inter,Helvetica,Roboto,sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
 
-button {
+.default button {
     background: transparent;
     background-color: transparent;
     box-shadow: none;
@@ -252,21 +272,23 @@ button {
     font-size: 15px;
 }
 
-.settings-label {
-    font-size: 12px;
-    color: #ad5f00;
-    caret-color: #ad5f00;
-}
-
 .smaller-font {
     font-size: 12px;
 }
 
-button:focus {
+.default button:focus {
     border: none;
 }
 
-switch {
+.default button:hover {
+    border: none;
+}
+
+.default button:active:hover {
+    border: none;
+}
+
+/* switch {
     background-color: #ffe16b;
     border-color: #ffe16b;
     box-shadow: none;
@@ -281,12 +303,4 @@ switch slider {
 switch:checked{
     background-color: #d48e15;
     border-color: #d48e15;
-}
-
-button:hover {
-    border: none;
-}
-
-button:active:hover {
-    border: none;
-}
+} */

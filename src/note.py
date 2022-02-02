@@ -50,13 +50,14 @@ class new_note():
         self.italic_button = self.builder.get_object("ItalicButton")
         self.underline_button = self.builder.get_object("UnderlineButton")
 
-        self.settings_button = self.builder.get_object("SettingsButton")
+        self.pin_button = self.builder.get_object("PinButton")
 
         self.header_bar = self.builder.get_object("Header")
 
         self.color_menu = self.builder.get_object("ColorMenu")
 
         self.color = "banana"
+        self.pinned = False
 
         self.banana_button = self.builder.get_object("BananaButton")
         self.strawberry_button = self.builder.get_object("StrawberryButton")

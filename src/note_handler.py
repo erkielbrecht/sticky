@@ -16,7 +16,6 @@ from collections import OrderedDict
 
 import note
 import close_dialog
-import settings_dialog
 import note_color
 
 launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
@@ -44,7 +43,7 @@ class note_handler():
         if len(self.note_list) == 0:
             Gtk.main_quit()
 
-    def make_new_note(self, widget):
+    def make_new_note(self, widget, display=True):
 
         self.counter += 1
 
@@ -57,16 +56,19 @@ class note_handler():
         new_note.underline_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_underline)
         new_note.italic_button.connect("clicked", self.set_text_tag, new_note, new_note.tag_italic)
 
-        new_note.settings_button.connect("clicked", self.open_settings)
-
-        new_note.note_window.present()
+        new_note.pin_button.connect("clicked", self.set_pin, new_note)
+        if display:
+            new_note.note_window.present()
 
         new_note.note_accelerators.connect(new_note.key, new_note.mod, 0, self.quit_app)
 
         new_note.note_window.connect("focus-in-event", self.handle_focus, True, new_note)
         new_note.note_window.connect("focus-out-event", self.handle_focus, False, new_note)
 
+        note_color.set_default_class(new_note)
         note_color.set_note_color(None, new_note.color, new_note)
+
+        new_note.note_window.set_title("Note " + str(self.counter))
 
         new_note.banana_button.connect("clicked", note_color.set_note_color, "banana", new_note)
         new_note.strawberry_button.connect("clicked", note_color.set_note_color, "strawberry", new_note)
@@ -80,13 +82,11 @@ class note_handler():
             _note.bold_button.show()
             _note.underline_button.show()
             _note.italic_button.show()
-            _note.settings_button.show()
         else:
             self.save_notes(None)
             _note.bold_button.hide()
             _note.underline_button.hide()
             _note.italic_button.hide()
-            _note.settings_button.hide()
 
 
     def set_text_tag(self, widget, _note, tag):
@@ -136,27 +136,33 @@ class note_handler():
         notes = json.loads(save_string)
 
         for i in notes:
-            self.make_new_note(None)
+            self.make_new_note(None, display=False)
             new_note = self.note_list[self.counter]
+
             new_note.color = notes[i]["color"]
             note_color.set_note_color(None, new_note.color, new_note)
-            new_note.note_window.resize(notes[i]["size"][0], notes[i]["size"][1])
+
+            new_note.note_window.set_default_size(notes[i]["size"][0], notes[i]["size"][1])
             new_note.note_window.move(notes[i]["position"][0], notes[i]["position"][1])
 
             note_buffer = new_note.note_text.get_buffer()
-
             start_iter = note_buffer.get_start_iter()
-
             format = note_buffer.register_deserialize_tagset()
-            print(notes[i]["content"].encode("latin1"))
             note_buffer.deserialize(note_buffer, format, start_iter, notes[i]["content"].encode("latin1"))
+            
+            new_note.note_window.present()
 
         save_file.close()
 
-    def open_settings(self, *args):
-        _settings_dialog = settings_dialog.new_settings_dialog()
-
-        _settings_dialog.settings_window.present()
+    def set_pin(self, widget, _note, *args):
+        if _note.pinned:
+            _note.note_window.set_keep_below(True)
+            _note.note_window.set_keep_above(False)
+            _note.pinned = False
+        else:
+            _note.note_window.set_keep_below(False)
+            _note.note_window.set_keep_above(True)
+            _note.pinned = True
 
     def close_note(self, widget, parent):
 
@@ -185,8 +191,6 @@ class note_handler():
             destroy_note(None)
         else:
             _close_dialog = close_dialog.new_close_dialog()
-
-            note_color.set_dialog_color(self.note_list[parent].color, _close_dialog)
 
             _close_dialog.close_window.set_transient_for(c_note_window)
 

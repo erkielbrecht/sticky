@@ -29,6 +29,20 @@ css_classes = [
     "blueberry-font",
 ]
 
+def set_default_class(note):
+
+    add_button_context = note.add_button.get_style_context().add_class("default")
+    close_button_context = note.close_button.get_style_context().add_class("default")
+    picker_button_context = note.picker_button.get_style_context().add_class("default")
+    bold_button_context = note.bold_button.get_style_context().add_class("default")
+    underline_button_context = note.underline_button.get_style_context().add_class("default")
+    italic_button_context = note.italic_button.get_style_context().add_class("default")
+    pin_button_context = note.pin_button.get_style_context().add_class("default")
+    textview_context = note.note_text.get_style_context().add_class("default")
+    headerbar_context = note.header_bar.get_style_context().add_class("default")
+    popover_context = note.color_menu.get_style_context().add_class("default")
+    window_context = note.note_window.get_style_context().add_class("default")
+
 def set_note_color(widget, color, note):
 
     note.color = color
@@ -44,7 +58,7 @@ def set_note_color(widget, color, note):
     underline_button_context = note.underline_button.get_style_context()
     italic_button_context = note.italic_button.get_style_context()
 
-    settings_button_context = note.settings_button.get_style_context()
+    pin_button_context = note.pin_button.get_style_context()
 
     textview_context = note.note_text.get_style_context()
 
@@ -130,12 +144,11 @@ def set_note_color(widget, color, note):
 
     underline_button_context.add_class(font)
 
-    for x in settings_button_context.list_classes():
+    for x in pin_button_context.list_classes():
         if x in css_classes:
-           settings_button_context.remove_class(x)
+           pin_button_context.remove_class(x)
 
-    settings_button_context.add_class(font)
-    print(settings_button_context.list_classes())
+    pin_button_context.add_class(font)
 
     for x in textview_context.list_classes():
         if x in css_classes:

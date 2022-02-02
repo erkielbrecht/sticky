@@ -24,8 +24,8 @@
             <property name="margin_right">10</property>
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
-            <property name="label" translatable="yes">Do you wish to close the sticky?
-It will not be saved.</property>
+            <property name="label" translatable="yes">Do you wish to close this note?
+It will be deleted.</property>
             <property name="justify">center</property>
           </object>
           <packing>
