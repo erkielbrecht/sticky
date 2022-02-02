@@ -28,6 +28,7 @@ class new_note():
         self.note_window.set_skip_taskbar_hint(True)
         self.note_window.set_keep_below(True)
         self.note_window.set_decorated(True)
+        #self.note_window.set_type_hint(Gdk.WindowTypeHint.DOCK)
 
         self.note_accelerators = Gtk.AccelGroup()
         self.note_window.add_accel_group(self.note_accelerators)

@@ -3,7 +3,7 @@
 from textwrap import indent
 import gi
 
-import os
+import os, sys
 
 import json
 
@@ -18,6 +18,16 @@ import note
 import close_dialog
 import settings_dialog
 import note_color
+
+launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+# Update sys.path to include modules
+if launch_dir == "/usr/bin":
+    data_path = "/usr/share/com.github.erkielbrecht.sticky/sticky"
+else:
+    data_path = launch_dir + "/sticky"
+
+save_path = os.path.expanduser('~') + "/.var/app/com.github.erkielbrecht.sticky/data/"
 
 print("Note handler imported!")
 
@@ -113,14 +123,14 @@ class note_handler():
             note_save[i] = note_info
 
         save_string = json.dumps(note_save, indent=4)
-        save_file = open("data/saved_notes.json","w")
+        save_file = open(save_path + "saved_notes.json","w")
         save_file.write(save_string)
         save_file.close()
         print("Saving Done!")
         
 
     def load_notes(self):
-        save_file = open("data/saved_notes.json","r")
+        save_file = open(save_path + "saved_notes.json","r")
         save_string = save_file.read()
 
         notes = json.loads(save_string)
@@ -188,8 +198,8 @@ class note_handler():
 
 
     def __init__(self):
-        if os.path.exists("data/saved_notes.json"):
-            note_save_file = open("data/saved_notes.json", "r")
+        if os.path.exists(save_path + "saved_notes.json"):
+            note_save_file = open(save_path + "saved_notes.json", "r")
             content =  note_save_file.read()
             note_save_file.close()
         else:

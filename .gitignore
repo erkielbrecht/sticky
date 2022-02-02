@@ -1,2 +1,3 @@
 src/__pycache__
 data/saved_notes.json
+.flatpak-builder
