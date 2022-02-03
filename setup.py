@@ -30,12 +30,14 @@ install_data = [
     ('bin/sticky/data/icons',['data/icons/strawberry_circle.svg']),
     ('bin/sticky/data/template',['data/template/note.ui']),
     ('bin/sticky/data/template',['data/template/close.ui']),
+    ('bin/sticky',['src/constants.py']),
     ('bin/sticky',['src/main.py']),
     ('bin/sticky',['src/note_handler.py']),
     ('bin/sticky',['src/note.py']),
     ('bin/sticky',['src/note_color.py']),
     ('bin/sticky',['src/close_dialog.py']),
-    ('bin/sticky',['src/__init__.py'])
+    ('bin/sticky',['src/__init__.py']),
+    ('bin/sticky/locale/et/LC_MESSAGES', ['po/et/LC_MESSAGES/sticky.po'])
 ]
 
 setup(  

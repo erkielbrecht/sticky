@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import gi, os, sys
+import gi, os, sys, locale, gettext
 
 gi.require_version("Gtk", "3.0")
 gi.require_version('Gdk', '3.0')
@@ -16,6 +16,25 @@ if launch_dir == "/usr/bin":
 else:
     data_path = launch_dir + "/sticky"
 
+try:
+    current_locale, encoding = locale.getdefaultlocale()
+    current_locale = current_locale.split("_", 1)[0]
+    locale_path = os.path.join(
+        os.path.abspath(
+            os.path.dirname(__file__)
+        ), 
+        'locale'
+    )
+    translate = gettext.translation(
+        "sticky", 
+        locale_path, 
+        [current_locale] 
+    )
+    _ = translate.gettext
+except FileNotFoundError:
+    _ = str
+
+
 print("Close Dialog class imported!")
 
 class new_close_dialog():
@@ -29,6 +48,7 @@ class new_close_dialog():
         self.close_window.set_decorated(True)
 
         self.info_label = self.builder.get_object("CloseMessage")
+        self.info_label.set_text(_("Do you wish to close this note?\nIt will be deleted."))
 
         self.cancel_button = self.builder.get_object("CancelButton")
 
