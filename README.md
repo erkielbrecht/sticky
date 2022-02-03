@@ -16,8 +16,8 @@
     <img src="https://img.shields.io/badge/Release-v%201.0.2-blue.svg?style=for-the-badge">
   </a>
 </p>
- ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot1.png) 
- ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot2.png) |
+| ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot1.png) 
+| ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot2.png) |
 
 # Dependencies
   - `granite (>= 0.6.0)`
