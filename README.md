@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/erkielbrecht/sticky/tree/main/data/icons/app/128/com.github.erkielbrecht.sticky.svg" alt="Icon" />
+  <img src="https://github.com/erkielbrecht/sticky/blob/1951688c933b9577c7d2bed629c0e290870f9ff5/data/icons/app/128/com.github.erkielbrecht.sticky.svg" alt="Icon" />
 </p>
 <h1 align="center">Sticky</h1>
 <h4 align="center">A simple sticky note app for your elementary os desktop.</h4>
@@ -16,8 +16,8 @@
     <img src="https://img.shields.io/badge/Release-v%201.0.2-blue.svg?style=for-the-badge">
   </a>
 </p>
-
-| ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot1.png) | ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot2.png) |
+ ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot1.png) 
+ ![Screenshot](https://github.com/erkielbrecht/sticky/blob/main/data/screenshots/screenshot2.png) |
 
 # Dependencies
   - `granite (>= 0.6.0)`
