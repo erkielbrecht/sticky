@@ -2,7 +2,7 @@
   <img src="https://github.com/erkielbrecht/sticky/blob/1951688c933b9577c7d2bed629c0e290870f9ff5/data/icons/app/128/com.github.erkielbrecht.sticky.svg" alt="Icon" />
 </p>
 <h1 align="center">Sticky</h1>
-<h4 align="center">A simple sticky note app for your elementary os desktop.</h4>
+<h4 align="center">A simple sticky note app for your Elementary OS desktop.</h4>
 
 <!--<p align="center">
   <a href="https://appcenter.elementary.io/..."><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter" /></a>
