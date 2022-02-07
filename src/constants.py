@@ -33,7 +33,7 @@ class App:
     application_id = "com.github.erkielbrecht.sticky"
     application_name = "Sticky"
     application_description = _('Simple sticky notes for your desktop')
-    application_version ="0.0.1"
+    application_version ="0.0.3"
     app_years = "2022"
     main_url = "https://github.com/erkielbrecht/sticky"
     bug_url = "https://github.com/erkielbrecht/sticky/issues"

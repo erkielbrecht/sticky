@@ -42,7 +42,7 @@ install_data = [
 
 setup(  
     name='Sticky',
-    version='0.0.1',
+    version='0.0.3',
     author='Erki Elbrecht',
     description='Simple sticky notes for your desktop',
     url='https://github.com/erkielbrecht/sticky',
