@@ -1,0 +1,14 @@
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>,2022\n"
+"Language-Team: Italian\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Do you wish to close this note?\nIt will be deleted."
+msgstr "Vuoi chiudere questa nota?\nSarà eliminata."
+
+msgid "Simple sticky notes for your desktop"
+msgstr "Semplici note adesive per il tuo desktop"
