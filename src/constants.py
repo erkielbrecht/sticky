@@ -1,15 +1,13 @@
 import gi
 import os
-print("troll")
 import locale
-print("troll")
 import gettext
-print("troll")
+
 
 gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk
-print("troll")
+
 try:
     current_locale, encoding = locale.getdefaultlocale()
     locale_path = os.path.join(
@@ -27,7 +25,6 @@ try:
 except FileNotFoundError:
     _ = str
 
-print("fakfak")
 class App:
     application_shortname = "sticky"
     application_id = "com.github.erkielbrecht.sticky"
