@@ -25,7 +25,7 @@ class new_note():
         self.builder.add_from_file(data_path + "/data/template/note.ui")
 
         self.note_window = self.builder.get_object("Note")
-        self.note_window.set_skip_taskbar_hint(True)
+        #self.note_window.set_skip_taskbar_hint(True)
         self.note_window.set_keep_below(True)
         self.note_window.set_decorated(True)
         #self.note_window.set_type_hint(Gdk.WindowTypeHint.DOCK)

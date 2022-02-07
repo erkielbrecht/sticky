@@ -2,7 +2,7 @@
 Name=Sticky
 GenericName=Sticky
 Comment=Simple sticky notes for your desktop
-Categories=System;Utility;
+Categories=Office;
 Exec=com.github.erkielbrecht.sticky
 Icon=com.github.erkielbrecht.sticky
 Terminal=false
@@ -10,4 +10,4 @@ Type=Application
 NoDisplay=false
 StartupNotify=true
 X-GNOME-Gettext-Domain=com.github.erkielbrecht.sticky
-Keywords=Utility;
+Keywords=Office;Sticky;Notes;

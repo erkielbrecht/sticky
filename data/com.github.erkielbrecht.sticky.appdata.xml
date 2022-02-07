@@ -8,14 +8,16 @@
 	<summary>Simple sticky notes for your desktop</summary>
 	<description>
 		<p>
-			Create and edit sticky notes mindful of the Elementary OS color scheme
+			Create and edit sticky notes mindful of the Elementary OS color scheme.
+
+			Quit and save your notes any time with Ctrl+Q.
 		</p>
 		<p>
 			Features Include:
 		</p>
 		<ul>
 			<li>Custom colors</li>
-			<li>Pin above oter windows</li>
+			<li>Pin above other windows</li>
 			<li>Text formatting</li>
 		</ul>
 	</description>
@@ -23,9 +25,9 @@
 		<binary>com.github.erkielbrecht.sticky</binary>
 	</provides>
 	<releases>
-	<release version="0.0.1" date="2022-02-03">
+	<release version="0.0.3" date="2022-02-07">
 		<description>
-			<p>Initial release. Sticky notes for your desktop</p>
+			<p>Initial release with monetization. Sticky notes for your desktop</p>
 		</description>
 	</release>
 	</releases>
@@ -74,9 +76,10 @@
 		<content_attribute id="money-gambling">none</content_attribute>
 	</content_rating>
 	<custom>
-		<value key="x-appcenter-color-primary">#efefef</value>
-		<value key="x-appcenter-color-primary-text">#508ff3</value>
+		<value key="x-appcenter-color-primary">#6B4312</value>
+		<value key="x-appcenter-color-primary-text">#FFF394</value>
 		<value key="x-appcenter-suggested-price">5</value>
+		<value key="x-appcenter-stripe">pk_live_51KP7HZHuQ7isHddTpp0qwnyEAG6hx7VfAItmBwOHlmI9sWP0Y80maqkTOp0mprNW6NDBdBffTFqGp9IxsjcrI31800rwaPPenz</value>
 	</custom>
 	<kudos>
 		<kudo>HiDpiIcon</kudo>
