@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/License-GPL3.0-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/erkielbrecht/sticky/releases">
-    <img src="https://img.shields.io/badge/Release-v0.0.1-blue.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v0.0.3-blue.svg?style=for-the-badge">
   </a>
 </p>
 
